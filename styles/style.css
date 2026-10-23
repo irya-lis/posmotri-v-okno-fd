@@ -89,7 +89,7 @@ ol {
 }
 
 /* стили самого видео */
-.result__video { 
+.result__video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -394,7 +394,7 @@ ol {
 
 /* Отступ для элемента списка */
 .content__list-item {
-  padding-left: 3px; 
+  padding-left: 3px;
   padding-right: 3px;
 }
 
