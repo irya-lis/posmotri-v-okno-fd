@@ -68,18 +68,16 @@ ol {
   margin: 0 auto;
 
   gap: 30px;
-} 
+}
 
 /* Стили видео + форма = result - левый блок*/
-.result{
+.result {
   display: flex;
   flex-direction: column;
 
-  margin-top: 78px;
   width: 711px;
   height: 456px;
 }
-
 
 /* контейнер видео, которое смотрим */
 .result__video-container {
@@ -117,6 +115,7 @@ ol {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-self: stretch;
 }
 
 /* Правый блок контент со скроллом + 
@@ -139,7 +138,6 @@ ol {
   gap: 30px;
 }
 
-
 /* Посмотри в окно - титлe */
 .title {
   font-family: "Oswald", sans-serif;
@@ -147,11 +145,7 @@ ol {
   font-weight: 700;
   line-height: 0.94;
   text-transform: uppercase;
-  color: #FFFFFF;
-
-
-  margin-top: 0px;
-  margin-right: 140px;
+ 
   margin-bottom: 26px;
 }
 
@@ -160,7 +154,7 @@ ol {
   color: #545050;
 }
 
-/* Названия видео */
+/* Карточка видео */
 .content__video-card {
   display: flex;
   flex-direction: row;
@@ -176,7 +170,7 @@ ol {
   object-position: center;
 }
 
-/* Жадные картинки-превьюшки */
+/* Текстовая часть карточки занимает всё свободное место */
 .content__video-card-description-container {
   flex-grow: 1;
 }
@@ -186,10 +180,8 @@ ol {
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   font-weight: 400;
-  line-height: 1;
-  color:#FFFFFF;
-
-  margin: 0;
+  line-height: normal;
+ 
   margin-bottom: 5px;
 }
 
@@ -218,12 +210,13 @@ ol {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 /* Описание видео */
 .content__video-card-description {
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   font-weight: 400;
-  line-height: 16.2px;
+  line-height: 0.9;
   color:#FFFFFF;
 
   margin: 0;
@@ -231,8 +224,8 @@ ol {
 
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-  line-clamp: 1;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
   overflow: hidden;
 }
 
@@ -246,6 +239,7 @@ ol {
   clip-path: inset(50%);
   white-space: nowrap;
 } 
+
 /* Чекбоксы время суток */
 .search-form__checkbox-list {
   display: flex;
@@ -287,10 +281,11 @@ ol {
   background-color: transparent;
   appearance: none;
   outline: none;
+  cursor: text;
 
+  height: 27px;
   width: 225px;
   padding: 3px 0;
-  box-sizing: border-box;
 }
 
 .search-form__textfield::placeholder {
@@ -328,11 +323,6 @@ ol {
   text-decoration: underline;
 }
 
-/* Внешняя обводка вокруг лейбла чекбокса только при фокусе с клавиатуры */
-.search-form__label:has(.search-form__checkbox:focus-visible) {
-  outline: 1px solid #FFFFFF;
-}
-
 /* Стилизуем кнопки */
 .button {
   font-family: "Fira Sans Condensed", sans-serif;
@@ -358,21 +348,16 @@ ol {
   align-self: flex-end;
 
   width: 194px;
-  height: 34px;
-  box-sizing: border-box;
 }
 
 /* Кнопка "Показать еще" */
 .more-button {
-  width: 100%;
-  height: 34px;
-  box-sizing: border-box;
+  margin: 0 3px;
+  width: auto;
 }
 
 /* :hover - при наведении */
-.button:hover, 
-.search-form__label-text:hover
- {
+.button:hover {
   text-decoration: underline;
 }
 
@@ -383,8 +368,7 @@ ol {
 }
 
 /* :active - когда активная*/
-.button:active, 
-.content__video-card-description-container:active {
+.button:active {
   background-color: #545050;
 }
 
@@ -392,13 +376,11 @@ ol {
 .button:focus,
 .search-form__textfield:focus {
   outline: none;
-
 }
 
-.button:focus-visible,
-.search-form__label:has(:focus-visible) {
+.button:focus-visible {
   outline: 1px solid #FFFFFF;
-  outline-offset: 2px;
+  outline-offset: 1px;
 }
 
 .content__card-link_current {
@@ -434,5 +416,5 @@ ol {
 /* Позиционирование прелоадеров */
 .result__video-container,
 .content__list-container {
-  position: relative;;
+  position: relative;
 }
