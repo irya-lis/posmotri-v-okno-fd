@@ -76,7 +76,6 @@ ol {
   flex-direction: column;
 
   width: 711px;
-  height: 456px;
 }
 
 /* контейнер видео, которое смотрим */
@@ -103,7 +102,6 @@ ol {
   justify-content: space-between;
   align-items: flex-start;
 
-  height: 54px;
   width: 711px;
 }
 
@@ -127,7 +125,6 @@ ol {
 
   height: 298px;
   overflow-y: auto;
-  overflow-x: hidden;
 }
 
 /* стили для видео листа  */
@@ -358,11 +355,6 @@ ol {
   text-decoration: underline;
 }
 
-/* :active - когда активная*/
-.button:active {
-  background-color: #545050;
-}
-
 /* :focus - убираю браузерную обводку */
 .button:focus,
 .search-form__textfield:focus {
@@ -378,7 +370,8 @@ ol {
   background-color: #545050;
 }
 
-.content__card-link:active {
+.content__card-link:active,
+.button:active {
   background-color: #545050;
 }
 
