@@ -8,10 +8,16 @@ html {
   block-size: 100%;
 }
 
+/* Стили каркаса - body*/
 .page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
+
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
@@ -48,4 +54,357 @@ ol {
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #D9D9D9;
+}
+
+/* Стили для контейнера - main*/
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+
+  gap: 30px;
+}
+
+/* Стили видео + форма = result - левый блок*/
+.result {
+  display: flex;
+  flex-direction: column;
+
+  width: 711px;
+  height: 456px;
+}
+
+/* контейнер видео, которое смотрим */
+.result__video-container {
+  height: 386px;
+  width: 711px;
+  margin-bottom: 16px;
+
+  overflow: hidden;
+}
+
+/* стили самого видео */
+.result__video { 
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Стили формы под видео */
+.search-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  height: 54px;
+  width: 711px;
+}
+
+/* Правый блок весь */
+.content__details {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: stretch;
+}
+
+/* Правый блок контент со скроллом + 
+   отступ кнопка - показать еще*/
+.content__list-container {
+  display: flex;
+  flex-direction: column;
+
+  gap: 30px;
+
+  height: 298px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* стили для видео листа  */
+.content__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Посмотри в окно - титлe */
+.title {
+  font-family: "Oswald", sans-serif;
+  font-size: 75px;
+  font-weight: 700;
+  line-height: 70px;
+  text-transform: uppercase;
+
+  margin-top: 3px;
+  margin-bottom: 23px;
+}
+
+/* Декорации для ,ПО-, */
+.content__accent {
+  color: #545050;
+}
+
+/* Карточка видео */
+.content__video-card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+/* Миниатюра карточки видео */
+.content__video-card-thumbnail {
+  height: 103px;
+  min-width: 194px;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Текстовая часть карточки занимает всё свободное место */
+.content__video-card-description-container {
+  flex-grow: 1;
+}
+
+/* Стили для названий фильтров под видео */
+.search-form__fieldset-title {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 5px;
+}
+
+/* Ссылки названия городов */
+.content__card-link {
+  display: block;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+/* Текст названия городов */
+.content__video-card-title {
+  font-family: "Oswald", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+
+  margin-bottom: 6px;
+
+  width: 196px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Описание видео */
+.content__video-card-description {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 0.9;
+
+  width: 196px;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  overflow: hidden;
+}
+
+/* Скрытие лишних лейблов и браузерных чекбоксов */
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+} 
+
+/* Чекбоксы время суток */
+.search-form__checkbox-list {
+  display: flex;
+  flex-direction: row;
+  width: 212px;
+  gap: 15px;
+}
+
+/* Сброс бордера */
+.search-form__fieldset {
+  border: none;
+}
+
+/* Стилизуем обёртки для поискового инпута и чекбоксов */
+.search-form__label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: fit-content;
+  gap: 5px;
+}
+
+/* Стилизуем текстовое поле ввода */
+.search-form__textfield {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+  color:#FFFFFF;
+
+  border-left: none;
+  border-right: none;
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+  background-color: transparent;
+  appearance: none;
+  outline: none;
+  cursor: text;
+
+  height: 27px;
+  width: 225px;
+  padding: 3px 0;
+}
+
+.search-form__textfield::placeholder {
+  color: rgb(255 255 255 / 0.7);
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #FFFFFF;
+  outline-offset: 1px;
+}
+
+/* Стилизуем чекбокс */
+.search-form__pseudo-checkbox {
+  width: 19px;
+  height: 19px;
+  border: 1px solid #FFFFFF;
+  padding: 1px;
+}
+
+.search-form__pseudo-checkbox::after {
+  content: "";
+  display: block;
+  background-color: #FFFFFF;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+/* Показываем внутренний квадрат при выборе чекбокса */
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  opacity: 1;
+}
+
+/* Подчёркиваем текст при наведении на лейбл */
+.search-form__label:hover .search-form__label-text {
+  text-decoration: underline;
+}
+
+/* Стилизуем кнопки */
+.button {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+
+  height: 34px;
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF;
+  background-color: transparent;
+
+  flex-shrink: 0;
+}
+
+/* Кнопка "Найти" */
+.search-form__submit-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-end;
+
+  width: 194px;
+}
+
+/* Кнопка "Показать еще" */
+.more-button {
+  width: 100%;
+}
+
+/* :hover - при наведении */
+.button:hover {
+  text-decoration: underline;
+}
+
+/* Подчеркиваю название и описание видева, когда курсор наводится на миниатюру видева */
+.content__card-link:hover .content__video-card-title,
+.content__card-link:hover .content__video-card-description {
+  text-decoration: underline;
+}
+
+/* :active - когда активная*/
+.button:active {
+  background-color: #545050;
+}
+
+/* :focus - убираю браузерную обводку */
+.button:focus,
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid #FFFFFF;
+  outline-offset: 1px;
+}
+
+.content__card-link_current {
+  background-color: #545050;
+}
+
+.content__card-link:active {
+  background-color: #545050;
+}
+
+/* Сброс стандартного фокуса браузера у карточки */
+.content__card-link:focus {
+  outline: none;
+}
+
+/* Карточка в фокусе (при перемещении с клавиатуры через Tab) */
+.content__card-link:focus-visible {
+  outline: 1px solid #FFFFFF;
+}
+
+/* Отступ для элемента списка */
+.content__list-item {
+  padding-left: 3px; 
+  padding-right: 3px;
+}
+
+.button,
+.search-form__label {
+  cursor: pointer;
+}
+
+/* Позиционирование прелоадеров */
+.result__video-container,
+.content__list-container {
+  position: relative;
 }
